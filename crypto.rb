@@ -14,15 +14,15 @@
     @max = @money.max
     #puts @min
     #  puts @max
-
+ @maxx = @array.index(46183.2)
     end
 delete
 
 
-puts @money[0].class
+#puts @money[0].class
 
   def lol
-    @hash = Hash[@array.zip(@money)]#on change une array en hash on met la premiere array en .zip pour la deplacer et on fait dans quoi en ()
+    @hash = Hash[@money.zip(@array)]#on change une array en hash on met la premiere array en .zip pour la deplacer et on fait dans quoi en ()
     #puts @m
   end
 
@@ -35,26 +35,27 @@ puts @money[0].class
 	    tab = []
 	     while (i < @money.size)
 		       if @money[i] < 6000.0
-			          print "#{@money[i]} ==>"
-			            puts @array[i]
+			        #  print "#{@money[i]} ==>"
+			           # puts @array[i]
                   tab << @money[i]
 		       end
 		      i = i + 1
 	     end
    puts ""
    puts  "parmi celle-ci le cour le plus haut et #{tab.max}."
+   puts "les crypto endessous de 6000 : #{tab.size}"
+   #puts "le devise endessous de 6000:#{tab} "
    return(0)
   end
-
 
 
 
 lol
 math(@hash, @money)
 
-
-
+puts @hash.min.to_s
+puts @hash.max.to_s
 puts "la plus petite valeur #{@min} "
 puts "la plus grose valeur #{@max}"
 
-puts "Nombre de crypto contenant coin :" + @hash.keys.grep(/coin/i).length.to_s#
+puts "Nombre de crypto contenant coin :" + @array.grep(/coin/i).length.to_s#
